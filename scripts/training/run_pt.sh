@@ -1,18 +1,18 @@
 lr=2e-4
-lora_rank=8
+lora_rank=4
 lora_alpha=32
 lora_trainable="q_proj,v_proj,k_proj,o_proj,gate_proj,down_proj,up_proj"
-modules_to_save="embed_tokens,lm_head"
+#modules_to_save="embed_tokens,lm_head"
 lora_dropout=0.05
 
-pretrained_model=path/to/hf/llama/dir
-chinese_tokenizer_path=path/to/chinese/llama/tokenizer/dir
-dataset_dir=path/to/pt/data/dir
-data_cache=temp_data_cache_dir
+pretrained_model=/home/wuyou/project/llama_model/7B_hf/
+chinese_tokenizer_path=/home/wuyou/project/llama_model/chinese_alpaca_plus_lora_7b
+dataset_dir=/home/wuyou/project/llama_model/data
+data_cache=/home/wuyou/project/llama_model/data_cache
 per_device_train_batch_size=1
 per_device_eval_batch_size=1
 gradient_accumulation_steps=8
-output_dir=output_dir
+output_dir=/home/wuyou/project/llama_model/alpaca_output/
 
 deepspeed_config_file=ds_zero2_no_offload.json
 
